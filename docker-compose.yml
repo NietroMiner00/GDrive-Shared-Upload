@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  gdrive-upload-relay:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gdrive_upload_relay
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_SECRET_KEY=change_this_to_something_secure_in_prod
+      # OAuth flow callback targets redirect URI
+      - FRONTEND_URL=http://localhost:5000
+    volumes:
+      # Consolidated config mount for database, token and google application credentials
+      - ./backend/config:/app/backend/config
+    restart: unless-stopped

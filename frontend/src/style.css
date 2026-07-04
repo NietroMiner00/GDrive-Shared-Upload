@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom glassmorphism and glow styles */
+.glass-card {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glow-indigo:hover {
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.glow-purple:hover {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+@keyframes border-pulse {
+  0%, 100% {
+    border-color: rgba(99, 102, 241, 0.2);
+  }
+  50% {
+    border-color: rgba(99, 102, 241, 0.6);
+  }
+}
+
+.pulse-border {
+  animation: border-pulse 2s infinite ease-in-out;
+}

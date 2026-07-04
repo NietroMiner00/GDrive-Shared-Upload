@@ -1,0 +1,18 @@
+# Python virtual environments & build artifacts
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+
+# Local config directory containing database and credentials
+backend/config/db.json
+backend/config/token.json
+backend/config/credentials.json
+
+# Node dependencies & production builds
+frontend/node_modules/
+frontend/dist/
+frontend/.eslintcache
+
+# OS Metadata
+.DS_Store
+Thumbs.db
