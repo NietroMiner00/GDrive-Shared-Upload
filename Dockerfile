@@ -39,5 +39,5 @@ EXPOSE 5000
 # Set working directory to backend so relative paths resolve correctly
 WORKDIR /app/backend
 
-# Run the Flask app
-CMD ["python", "app.py"]
+# Run the Flask app using Gunicorn production WSGI server
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
