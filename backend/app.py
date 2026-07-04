@@ -823,5 +823,6 @@ def admin_drive_create_folder():
         return jsonify({"error": "Failed to create folder", "details": str(e)}), 500
 
 if __name__ == '__main__':
-    # Run backend locally on port 5000
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    # Determine debug mode from environment variables (defaults to False in production)
+    debug_mode = os.environ.get("FLASK_DEBUG", "False").lower() in ["true", "1", "t", "y", "yes"]
+    app.run(host='0.0.0.0', port=5000, debug=debug_mode)

@@ -10,6 +10,7 @@ services:
       - "5000:5000"
     environment:
       - FLASK_ENV=production
+      - FLASK_DEBUG=False
       - FLASK_SECRET_KEY=change_this_to_something_secure_in_prod
       # OAuth flow callback targets redirect URI
       - FRONTEND_URL=http://localhost:5000
